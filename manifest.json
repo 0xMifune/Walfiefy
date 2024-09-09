@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Walfiefy",
+  "version": "1.0",
+  "icons": {
+    "128": "assets/icon/icon-128.png"
+  },
+  "description": "You expected a normal youtube experience, but it was me, Walfiefy!",
+  "host_permissions": ["https://www.youtube.com/*"],
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["main.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/images/*.png",
+        "assets/images/*.jpg",
+        "assets/images/*.jpeg",
+        "assets/images/*.webp",
+        "assets/popup/*.jpeg",
+        "assets/popup/*.webp",
+        "assets/popup/*.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
